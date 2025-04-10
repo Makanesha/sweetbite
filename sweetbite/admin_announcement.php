@@ -241,6 +241,24 @@ $result = $conn->query("SELECT * FROM announcements");
     .btn-delete:hover {
         background: #c0392b;
     }
+    .btn-view {
+    background: #ff9800;
+    color: white;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 4px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: background 0.3s;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+.btn-view:hover {
+    background: #e68900;
+}
+
     /* Add this at the end of your <style> */
 
 .announcements-table {
@@ -260,24 +278,7 @@ $result = $conn->query("SELECT * FROM announcements");
     </style>
 </head>
 <body>
-<div class="navbar">
-        <div>
-            <a href="admin_dashboard.php">Users</a>
-             <!-- Dropdown for Courses -->
-        <div style="display: inline-block; position: relative;">
-            <a href="#" onclick="toggleDropdown()" style="cursor:pointer;">Courses ▼</a>
-            <div id="courseDropdown" style="display:none; position:absolute; background:#333; padding:5px; border-radius:4px;">
-                    <a href="course_cake.php" style="display:block; color:white; text-decoration:none; padding:5px;">Cake</a>
-                    <a href="course_cookie.php" style="display:block; color:white; text-decoration:none; padding:5px;">Cookie</a>
-                    <a href="course_pastry.php" style="display:block; color:white; text-decoration:none; padding:5px;">Pastry</a>
-                    <a href="course_combo.php" style="display:block; color:white; text-decoration:none; padding:5px;">Combination</a>
-            </div>
-        </div>
-            <a href="#">Announcements</a>
-            <a href="#">Events</a>
-        </div>
-        <a href="register.php">Logout</a>
-    </div>
+<?php include ('adminheader.php');?>
     <div class="container">
         <h2>Post New Announcement</h2>
         <form method="POST" enctype="multipart/form-data">
@@ -323,7 +324,8 @@ $result = $conn->query("SELECT * FROM announcements");
                         <td><textarea name="description"><?= $row['description'] ?></textarea></td>
                         <td>
                             <button class="btn btn-save" type="submit" name="update_announcement">Save</button><br><br>
-                            <a class="btn btn-delete" href="?delete=<?= $row['id'] ?>" onclick="return confirm('Delete this announcement?')">Delete</a>
+                            <a class="btn btn-delete" href="?delete=<?= $row['id'] ?>" onclick="return confirm('Delete this announcement?')">Delete</a><br><br>
+                            <a class="btn btn-view" href="view_registrations.php?id=<?= $row['id'] ?>">View Registrations</a>
                         </td>
                     </form>
                 </tr>

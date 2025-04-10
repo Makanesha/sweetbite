@@ -53,21 +53,6 @@
   }
 }
 
-
-
-.logout__button {
-  background: transparent;
-  padding: 8px 16px;
-  border: 2px solid #3CB371;
-  border-radius: 5px;
-  transition: 0.3s;
-}
-
-.logout__button:hover {
-  background: #3CB371;
-  
-}
-
 /*========== BASE ==========*/
 *,::before,::after{
   box-sizing: border-box;
@@ -76,29 +61,51 @@
 html{
   scroll-behavior: smooth;
 }
-/* Dark theme base */
-.dark-theme {
-    background-color: #1d1d1d;
-    color: #f5f5f5;
+
+/*========== Variables Dark theme ==========*/
+body.dark-theme{
+  --title-color: #F1F3F2;
+  --text-color: #C7D1CC;
+  --body-color: #1D2521;
+  --container-color: #27302C;
 }
 
-/* Example of elements affected */
-.dark-theme header, 
-.dark-theme nav, 
-.dark-theme .nav__menu,
-.dark-theme .modal-content {
-    background-color: #2e2e2e;
-    color: #f5f5f5;
+/*========== Button Dark/Light ==========*/
+.change-theme{
+  position: absolute;
+  right: 1rem;
+  top: 1.8rem;
+  color: var(--text-color);
+  font-size: 1rem;
+  cursor: pointer;
 }
 
-.dark-theme input, 
-.dark-theme select, 
-.dark-theme button {
-    background-color: #444;
-    color: #f5f5f5;
-    border: 1px solid #666;
+body{
+  margin: var(--header-height) 0 0 0;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: var(--body-color);
+  color: var(--text-color);
+  line-height: 1.6;
 }
 
+h1,h2,h3,p,ul{
+  margin: 0;
+}
+
+ul{
+  padding: 0;
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+}
+
+img{
+  max-width: 100%;
+  height: auto;
+}
 
 /*========== CLASS CSS ==========*/
 .section{

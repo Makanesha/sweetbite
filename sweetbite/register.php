@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($stmt->execute()) {
             $_SESSION["user_id"] = $conn->insert_id;
             $_SESSION["username"] = $username;
-            header("Location: index.html");
+            header("Location: index.php");
             exit();
         } else {
             $message = "❌ Registration failed. Try again.";
@@ -49,7 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if (password_verify($password, $row['password'])) {
                 $_SESSION["user_id"] = $row["id"];
                 $_SESSION["username"] = $row["username"];
-                header("Location: index.html");
+                header("Location: index.php");
                 exit();
             } else {
                 $message = "❌ Invalid password. Please try again.";

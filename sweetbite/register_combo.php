@@ -17,7 +17,7 @@ $experience = $_POST['experience'];
 if($stmt->execute()){
     echo "<script>alert('You have registered for Combination Course Successfully!  New batches starts next month'); window.location.href='course.html';</script>";
 }else{
-    echo "<script>alert('Registration Failed! Please try again.'); window.location.href='course.html';</script>";
+    echo "<script>alert('Registration Failed! Please try again.'); window.location.href='course.php';</script>";
 }
 
 $stmt->close();
